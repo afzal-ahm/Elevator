@@ -6,30 +6,6 @@ import java.util.ListIterator;
 
 public class ElevatorSystem {
 
-
-
-
-    public String getElevatorSystem() {
-
-        ListIterator<Floor> floorListIterator = floors.listIterator();
-        ArrayList<Integer> a = new ArrayList<Integer>();
-
-        while (floorListIterator.hasNext()){
-            Floor floor = floorListIterator.next();
-            a.add(floor.getFloorNumber());
-        }
-
-        ListIterator<Elevator> elevatorListIterator = elevators.listIterator();
-
-           Elevator elevator = elevatorListIterator.next();
-
-        return "ElevatorSystem{" + elevator.toString() +
-                ", Floors=" + a +
-                '}';
-
-
-    }
-
     List<Elevator> elevators;  // number of elevator in the system (1)
     List<Floor> floors;    // number of floor in the system (o-9)
     public ElevatorSystem(int numOfElevators, int numOfFloor) {
@@ -44,4 +20,30 @@ public class ElevatorSystem {
         }
 
     }
+
+    public String getElevatorSystem() {
+
+        ListIterator<Floor> floorListIterator = floors.listIterator();
+        ArrayList<Integer> a = new ArrayList<Integer>();
+
+        while (floorListIterator.hasNext()){
+            Floor floor = floorListIterator.next();
+            a.add(floor.getFloorNumber());
+        }
+
+        ListIterator<Elevator> elevatorListIterator = elevators.listIterator();
+
+        Elevator elevator = elevatorListIterator.next();
+
+        return "ElevatorSystem{" + elevator.toString() +
+                ", Floors=" + a +
+                '}';
+
+
+    }
+
+    public Elevator elevatorRequest(int userFloor){
+        return elevators.get(0);
+    }
+
 }
