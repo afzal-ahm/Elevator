@@ -1,5 +1,4 @@
 import java.util.Scanner;
-
 public class ElevatorController {
     public static void main(String[] args) {
         int numberOfFloors = 10;
