@@ -18,7 +18,6 @@ public class ElevatorSystem {
         }
 
     }
-
     public String getElevatorSystem() {
 
         ListIterator<Floor> floorListIterator = floors.listIterator();

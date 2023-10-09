@@ -10,30 +10,36 @@ public class ElevatorController {
 //        System.out.println(elevatorSystem.getElevatorSystem()); // get elevator system information (number of elevators , number of floors)
 
         while (true) {
-            System.out.print("Enter the floor you are on (0-"+(numberOfFloors-1)+") or 'q' to quit: ");
+            System.out.print("\nEnter the floor you are on (0-"+(numberOfFloors-1)+") or 'q' to quit: ");
             String input = sc.next();
 //            System.out.println(input);
 
             if (input.equalsIgnoreCase("q")) {
-                System.out.println("Exiting elevator system.");
+
+                System.out.println("\nExiting elevator system.");
                 break;
             }
             try {
                 int userInput = Integer.parseInt(input);
                 if (userInput < 0 || userInput > (numberOfFloors-1) ){
-                    System.out.println("Invalid floor number. Please enter a number between 0 and "+(numberOfFloors-1)+".");
+                    System.out.println("\nInvalid floor number. Please enter a number between 0 and "+(numberOfFloors-1)+".\n");
                     continue;
                 }
-                System.out.println("Elevator requested. Please wait.");
+                System.out.println("\nElevator requested. Please wait.");
                 System.out.println();
                 Elevator elevator = elevatorSystem.elevatorRequest(userInput);
 //                System.out.println(elevator);
+
+                int n = elevatorSystem.floors.size();
+//                System.out.println(n);
+
                 elevator.setDestinations(userInput);
                 elevator.setDirection();
 //                System.out.println(elevator);
+                System.out.println("\nThe Elevator door has closed");
 
                 while (elevator.hasDestination()){
-                    elevator.moveUserPlace();
+                    elevator.moveUserPlace(n);
 //                    System.out.println(elevator);
                 }
 
@@ -51,10 +57,10 @@ public class ElevatorController {
                 elevator.setDestinations(destinationFloor);
                 elevator.setDirection();
 
-//                System.out.println(elevator);
+                System.out.println("\nThe Elevator door has closed");
 
                 while (elevator.hasDestination()){
-                    elevator.moveUserPlace();
+                    elevator.moveUserPlace(n);
 //                    System.out.println(elevator);
                 }
 
@@ -62,7 +68,7 @@ public class ElevatorController {
 //                System.out.println(elevator);
 
             }catch (NumberFormatException e) {
-                System.out.println("Invalid input. Please try again.");
+                System.out.println("\nInvalid input. Please try again.\n");
             }
         }
 

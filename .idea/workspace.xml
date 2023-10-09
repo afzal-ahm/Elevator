@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f33267c-9635-4e56-b990-c59523bc1778" name="Changes" comment="main" />
+    <list default="true" id="6f33267c-9635-4e56-b990-c59523bc1778" name="Changes" comment="main">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Elevator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Elevator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ElevatorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ElevatorController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ElevatorSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ElevatorSystem.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -39,6 +44,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "/Users/afzal/Desktop/Yhills_Project/Elevator",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
@@ -126,7 +132,14 @@
       <option name="project" value="LOCAL" />
       <updated>1696810420073</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="main">
+      <created>1696811183517</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1696811183517</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

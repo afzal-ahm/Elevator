@@ -44,12 +44,12 @@ public class Elevator {
         return !destinations.isEmpty();
     }
 
-    public void moveUserPlace(){
+    public void moveUserPlace(int floors){
 
 
-            System.out.println("Elevator is on floor " + (currentFloor));
+            System.out.println("\nElevator is on floor " + (currentFloor));
         System.out.print("------------------------------------------\n");
-        for(int i=0; i <= 9; ++i){
+        for(int i=0; i < floors; ++i){
 
             if (i == this.currentFloor){
                 System.out.print(" == ");
@@ -81,7 +81,7 @@ public class Elevator {
             } else if (destinations.get(0) == currentFloor) {
 
                 destinations.remove(0);
-                System.out.println("Exiting the elevator...");
+                System.out.println("The Elevator door has opened.....\n");
                 setDirection(Direction.IDLE);
             } else {
                 currentFloor--;
