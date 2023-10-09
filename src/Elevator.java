@@ -5,6 +5,7 @@ public class Elevator {
     private Direction direction;
     private int currentFloor;
     private List<Integer> destinations;
+
     @Override
     public String toString() {
         return "Elevator{" +
@@ -20,40 +21,71 @@ public class Elevator {
         this.destinations = new ArrayList<>();
     }
 
+    public void setDirection() {
+        if (destinations.get(0) > currentFloor) {
+            direction = Direction.UP;
+        } else if (destinations.get(0) < currentFloor) {
+            direction = Direction.DOWN;
+        }
+
+    }
+
     public void setDirection(Direction direction) {
         this.direction = direction;
     }
-
-
 
     public void setDestinations(int num) {
         destinations.add(num);
 
     }
 
-    public Direction getDirection() {
-        return direction;
+
+    public boolean hasDestination() {
+        return !destinations.isEmpty();
     }
-
-    public int getCurrentFloor() {
-        return currentFloor;
-    }
-
-
 
     public void moveUserPlace(){
-        if (destinations.get(0) > currentFloor) {
-            direction = Direction.UP;
-        } else if (destinations.get(0) < currentFloor) {
-            direction = Direction.DOWN;
+
+
+            System.out.println("Elevator is on floor " + (currentFloor));
+        System.out.print("------------------------------------------\n");
+        for(int i=0; i <= 9; ++i){
+
+            if (i == this.currentFloor){
+                System.out.print(" == ");
+            } else {
+                System.out.printf(" %d ", i);
+            }
         }
-        while (destinations.get(0) != currentFloor) {
-            System.out.println(currentFloor);
+
+        if (direction.equals(Direction.UP)){
+            System.out.println("\n\n-->");
+        } else if(direction.equals(Direction.DOWN)){
+            System.out.println("\n\n<--");
+        }else {
+            System.out.println("\n\n--");
+        }
+        System.out.println("------------------------------------------\n\n");
+
+
+
+
+            try {
+                Thread.sleep(500); // Hold for at least 0.5 seconds on each floor
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
             if (destinations.get(0) > currentFloor) {
                 currentFloor++;
+            } else if (destinations.get(0) == currentFloor) {
+
+                destinations.remove(0);
+                System.out.println("Exiting the elevator...");
+                setDirection(Direction.IDLE);
             } else {
                 currentFloor--;
             }
-        }
+
     }
 }
