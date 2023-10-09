@@ -12,7 +12,7 @@ public class ElevatorSystem {
             elevators.add(new Elevator());
         }
 
-        floors = new ArrayList<Floor>();           // it can hold any number of floors
+        floors = new ArrayList<Floor>();           // it can hold any number of floors (you can add any number of floors, but display only (0-9) for now)
         for (int i =0; i < numOfFloor; i++){
             floors.add(new Floor(i));
         }
