@@ -36,7 +36,6 @@ public class Elevator {
 
     public void setDestinations(int num) {
         destinations.add(num);
-
     }
 
 
